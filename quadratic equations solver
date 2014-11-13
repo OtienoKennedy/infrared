@@ -1,0 +1,35 @@
+ private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {                                             
+       
+        this.ClearFields();
+    }                                            
+
+    private void jButtonCalculateActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+       
+        double ax=Double.parseDouble(this.jTextFieldxsq.getText());
+        double bx=Double.parseDouble(this.jTextFieldx.getText());
+        double k=Double.parseDouble(this.jTextFieldConstant.getText());
+        
+        int q=1;
+        int qr=Math.negateExact(q);
+        double rootdet1= (bx*bx)-(4*ax*k);
+        double detbool=Math.sqrt(rootdet1);
+        
+        
+        
+        if((bx*bx)>(4*ax*k)){
+        
+        double xplus=((qr*bx)+detbool)/(2*ax);//((qr*bx)+detbool)/(2*ax);
+        this.jTextFieldx1.setText(String.format("%.3f", xplus));
+        
+        double xmin=((qr*bx)-detbool)/(2*ax);
+        this.jTextFieldx2.setText(String.format("%.3f", xmin));
+    
+        }else{System.out.println("Rogue operation");}
+    }                                                
+ private void ClearFields(){
+ this.jTextFieldConstant.setText("");
+ this.jTextFieldx1.setText(String.format("%.2f",0.0));
+ this.jTextFieldx.setText("");
+ this.jTextFieldx2.setText(String.format("%.2f",0.0));
+ this.jTextFieldxsq.setText("");
+ }
