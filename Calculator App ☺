@@ -1,0 +1,26 @@
+public CalcUI() {
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        setTitle("Arthur's Great Calc ☺");
+        
+        setResizable(false);
+        setLocationRelativeTo(null);
+        
+        initComponents();
+        this.initial();
+       
+    }
+    
+    //The code for initial() method:
+     public void ClearField()
+    {
+        this.jTextFieldAnswer.setText("0");
+    }
+    
+    public void initial()
+    {
+        this.jTextFieldAnswer.setText("");
+    }
+    
+    //also including the ClearField method for clearing the entire screen.
